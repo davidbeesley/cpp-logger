@@ -12,13 +12,7 @@ int main()
 	logger.info("Example Info");
 	logger.warning("Example Warning");
 	logger.error("Example Error");
-	for (int i = 0; i < 4; i++) {
-		logger.setLogLevel((LogLevel)i);
-		for (int j = 0; j < 4; j++) {
-			logger.log((LogLevel)j, "%d %d",i,j);
 
-		}
-	}
 
 	logger.setLogLevel(LogLevel::DEBUG);
 	logger.newTestSuite("A second test suite");
@@ -29,26 +23,27 @@ int main()
 	logger.newTestSuite("A passed test suite");
 	logger.test(true);
 	logger.endTestSuite();
-	logger.print("Hello World!");
-	logger.printLine("Hello World!");
+	logger.print("Hello World without newline! ");
+    logger.print("Now printing a newline: \n");
+	logger.printLine("Hello World with newline!");
 
 
 	logger.newTestSuite("testInt, testFloat, testString");
-	logger.testInt(1,1,"First testInt");
-	logger.testInt(1,0,"Second testInt");
+	logger.testInt(1,1,"First testInt. should pass");
+	logger.testInt(1,0,"Second testInt. should fail");
 	int one = 0xffab1;
 	int two = 0x2;
-	logger.testInt(one, two);
-	logger.testFloat(1.105215915, 1, "First testFloat");
-	logger.testFloat(1.5, 1.5, "Second testFloat");
+	logger.testInt(one, two, "should fail");
+	logger.testFloat(1.105215915, 1, "First testFloat, should fail");
+	logger.testFloat(1.5, 1.5, "Second testFloat, should pass");
 	float f1 = 1.5;
 	double f2 = 2.25215129871235;
-	logger.testFloat(f1, f2);
-	logger.testString("h","j","First stringTest");
-	logger.testHex(one,two);
-	logger.testBits(1,2);
-	logger.testBits(-1000,-1);
-	logger.testHex(-1,-2);
+	logger.testFloat(f1, f2, "Should fail");
+	logger.testString("h","j","First stringTest, should fail");
+	logger.testHex(one,two, "should fail");
+	logger.testBits(1,2, "Should fail");
+	logger.testBits(-1000,-1, " Should fail");
+	logger.testHex(-1,-2, "Should fail" );
 	logger.endTestSuite();
 
 
