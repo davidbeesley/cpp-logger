@@ -39,7 +39,7 @@ void info(std::string format, ...);
 void warning(std::string format, ...);
 void error(std::string format, ...);
 void log(LogLevel stringLogLevel, std::string format, ...);
-
+```
 
 ### Testing functions
 ```c
