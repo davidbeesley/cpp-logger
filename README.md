@@ -91,7 +91,7 @@ int main()
 	logger.test(true);
 	logger.endTestSuite();
 	logger.print("Hello World without newline! ");
-    logger.print("Now printing a newline: \n");
+    	logger.print("Now printing a newline: \n");
 	logger.printLine("Hello World with newline!");
 
 
