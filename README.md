@@ -1,5 +1,6 @@
 # cpp-logger
-Simple logger and test package for debugging c++ projects.
+Lightweight thread-safe framework for building, debugging, and testing command-line projects.
+
 
 ## Easest way to include in your project
 ```
