@@ -1,5 +1,5 @@
 # cpp-logger
-Lightweight thread-safe framework for building, debugging, and testing command-line projects.
+Lightweight thread-safe framework for building, debugging, and testing.
 
 
 ## Easest way to include in your project
